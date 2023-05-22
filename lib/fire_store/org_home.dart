@@ -12,27 +12,12 @@ class Home_screen extends StatefulWidget {
 class _Home_screenState extends State<Home_screen> {
   TextEditingController _namecontroller = TextEditingController();
   TextEditingController _datacontroller = TextEditingController();
-  void initState() {
-    super.initState();
-    TextEditingController _namecontroller = TextEditingController();
-    TextEditingController _datacontroller = TextEditingController();
-  }
 
-  @override
-  void dispose() {
-    _namecontroller.dispose();
-    super.dispose();
-  }
-
-  Future<void> addDataToCloudStore() async {
-    String name = _namecontroller.text;
-    String data = _datacontroller.text;
-
-    // Clear data from the screen
-    setState(() {
-      _namecontroller.clear();
-      _datacontroller.clear();
-    });
+  void clearText() {
+    // _namecontroller.clear();
+    // _datacontroller.clear();
+    _datacontroller.text = '';
+    _namecontroller.text = '';
   }
 
   @override
@@ -40,54 +25,47 @@ class _Home_screenState extends State<Home_screen> {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.all(40),
-        child: Column(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-
-              ),
-              child: TextFormField(
-                controller: _namecontroller,
-                decoration: InputDecoration(
-                    hintText: 'Name'
+        child: Center(
+          child: Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),),
+                child: TextField(
+                  controller: _namecontroller,
+                  decoration: InputDecoration(hintText: 'Name'),
                 ),
               ),
-            ),
-            SizedBox(height: 10,),
-            Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.white38
+              SizedBox(
+                height: 10,
               ),
-              child: TextFormField(
-                controller: _datacontroller,
-                decoration: InputDecoration(
-                    hintText: 'data'
+              Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white38),
+                child: TextField(
+                  controller: _datacontroller,
+                  decoration: InputDecoration(hintText: 'data'),
                 ),
               ),
-            ),
-            SizedBox(height: 20,),
-            ElevatedButton(
-                onPressed: () {
-                    Map<String,dynamic> note ={
-                     "name" : _namecontroller.text,
-                     "data" : _datacontroller.text
+              SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    Map<String, dynamic> note = {
+                      "name": _namecontroller.text,
+                      "data": _datacontroller.text
                     };
-                    final docUser = FirebaseFirestore.instance.collection('users').add(note);
-                    // var collection = FirebaseFirestore.instance.collection('user');
-                    // collection
-                    //     .doc() // <-- Doc ID to be deleted.
-                    //     .delete();
-                },
-                 child: Text('Enter')),
-
-
-          ],
+                    final docUser =
+                        FirebaseFirestore.instance.collection('users').add(note);
+                    clearText();
+                  },
+                  child: Text('Enter')),
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
-//await firestore.collection('your_collection').doc('your_document').delete();

@@ -2,11 +2,8 @@
 import 'package:crud_app/fire_store/org_home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/adapters.dart';
-import 'package:flutter/material.dart';
 
-import 'fire_store/home_page.dart';
+import 'package:flutter/material.dart';
 import 'normal/add_screen.dart';
 void main() async{
    WidgetsFlutterBinding.ensureInitialized();
