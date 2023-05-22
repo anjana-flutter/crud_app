@@ -31,3 +31,25 @@ class _Home_pageState extends State<Home_page> {
   await docUser.set(json);
   }
 }
+// onPressed: (() {
+//   Map<String,dynamic> note ={
+//     final name : _namecontroller.text,
+//     final data : _datacontroller.text
+//   };
+// //  FirestoreFirebase.instance.collection('users').note(data);
+//   },
+//   onPressed: () {
+//     final name = _namecontroller.text;
+//     final data = _datacontroller.text;
+//     createUser(name: name, data: data);
+//   }
+
+//
+// Future createUser({required String name, required String data}) async {
+//   final docUser = FirebaseFirestore.instance.collection('users').doc('my-id');
+//   final json = {
+//     'name': name,
+//     'data': data,
+//   };
+//   await docUser.set(json);
+// }
