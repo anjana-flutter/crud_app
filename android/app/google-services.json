@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1054435303628",
+    "firebase_url": "https://signin-db001-default-rtdb.firebaseio.com",
+    "project_id": "signin-db001",
+    "storage_bucket": "signin-db001.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054435303628:android:531eb39a118261981f2269",
+        "android_client_info": {
+          "package_name": "com.example.crud_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054435303628-m0m168hcpds89er8ns7m3f6938n16k83.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABtxzgwVaSQmWSsMK8YckzTpy8EGRiAu0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054435303628-hiqa6njai6015bmd90idnprkois0a2c4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
