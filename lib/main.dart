@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
       ),
       debugShowCheckedModeBanner: false,
-     // home:TaskListScreen() ,
-      home: Home_screen(),
+      home:TaskListScreen() ,
+      //home: Home_screen(),
     );
   }
 }
